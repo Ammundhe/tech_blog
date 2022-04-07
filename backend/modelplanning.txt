@@ -1,0 +1,18 @@
+#blog category
+name=models.charfields
+status=models.boolenfield
+
+#blog post
+category=models.fk()
+title=models.charfields()
+descriptions=models.textfields()
+image=models.imagefields()
+author=models.fk()
+date=models.datefields()
+
+# blog comments
+blog_post=models.fk()
+name=models.charfields()
+email=models.emailfields()
+comment=models.textfields()
+date=models.datefields()
