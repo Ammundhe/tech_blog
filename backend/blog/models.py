@@ -1,5 +1,7 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import date
 
 class blog_category(models.Model):
     name=models.CharField(max_length=255)
@@ -15,7 +17,7 @@ class blog_post(models.Model):
     description=models.TextField()
     image=models.ImageField()
     author=models.ForeignKey(User, on_delete=models.CASCADE)
-    date=models.DateField()
+    date=models.DateField(default=date.today())
 
     def __str__(self) -> str:
         return str(self.title)
